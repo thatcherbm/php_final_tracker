@@ -1,0 +1,30 @@
+The following is a description of the use of the site, text in {} relates functionality intended to be added later.
+
+This tool is meant to be a way to organize encounter information to help the game master keep 
+track of everything that is going on in an encounter (since I have a habit of forgetting about 
+traps or environmental effects or other troublesome effects).  
+
+Users have multiple levels (Spectator, Player, Game Master, Moderator, Administrator). 
+
+The base user (upon new account creation) is just a Spectator, able to view encounter initiative 
+lists the same as players.  
+
+Players will have the ability to create{/delete if owned} creatures (characters) and powers or abilities (effects) with the powers being assigned to the creature, and will be able to see the data of creatures not owned by the gm in an encounter, and {activate/deactivate their character's effects in the encounter}. 
+
+Game masters can create/edit encounters and will be able to see the data of all creatures and 
+effects in their encounter (but not encounters created by others) {and optionally hide effects of specific creatures}, game masters will also have the ability to promote a spectator to player status.  
+
+Moderators will have the ability to promote players and gamemasters, {will be able to see/delete/reassign any encounter/creature/effect.}  
+
+Admins will be able to promote moderators.  
+
+Moderator and Admin accounts are not meant to be used for game play.  {While they have the ability to delete or reassign entities, Mods and Admins will not have the ability to create new entities.}
+
+Encounters will be built by adding creatures (inheriting powers lists) via a link seen by the encounter owner in the view_encounter screen, and being prompted for the initiative (used to order the participants) and given the option to modify the name (to help keep track of who is who (when for instance battling a goblin horde)). The Initiative field is used to order the participants in a round.  Repeat initiative values will not be accepted.  A round will progress from numerically ascending, meaning 1 goes first, then 2, and so on, but initiative values need not be sequential (you could leave gaps numbering by 10's for instance). 
+
+The game master will also have the ability to add effects to the encounter via a similar link. The game master can add effects not tied to a creature(such as environmental effects not tied to initiative. {The game master will also have the ability to add public effects that the players will be able to see}
+
+Encounters are intended to display the active effects which apply to a specific participant's turn (effects which could come into play) which the game master wishes to track, which will be organized by first listing active effects which target the current participant, followed by active effects owned by that creature {organized by when they take place in a turn}.  The game master will be able to add/remove these effects, as well as add/remove/kill participants through the encounter.  Killing a participant will cause it's effects to be removed from the encounter {prompted to keep if wanted}, and it will be designated as a corpse and displayed accordingly.
+
+Encounters will keep track of how many rounds have elapsed as well as the initiative of the active creature.  The game master will have a next and previous button which will move to the next creature. Spectators/players will need to refresh the page {or something else if I'm clever}.
+

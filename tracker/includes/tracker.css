@@ -1,0 +1,189 @@
+header, hgroup, nav, footer, figure, figcaption, aside, section, article { 
+		display: block; }
+
+body { 	background-color: #3366FF;
+		color: #666666;
+		font-family: Arial, Helvetica, sans-serif;
+		margin: 0;	}
+		
+header { background-color: #000000;
+		color: #FFFFFF;
+		text-align: center;}
+		
+h1    { 	margin-bottom: 0px;
+		padding: 10px;
+		font-family: Georgia, "Times New Roman", serif; }
+h2    { 	margin-top: 0px;
+		margin-bottom: 10px;
+		color: #3399CC;
+		font-family: Georgia, "Times New Roman", serif;
+		text-shadow: 1px 1px 1px #ccc; }
+h3    { 	margin-top: 0;
+		margin-bottom: 0;
+		padding-bottom: 10px;
+		font-family: Georgia, "Times New Roman", serif; }
+		
+h4    {		margin-top: 10px;
+		margin-bottom: 10px;
+		font-family: Georgia, "Times New Roman", serif;}
+
+
+dt     { 	color: #000033; }
+
+p	{	padding-top: 4px; }
+
+footer{	display: block;
+		padding: 20px;
+		font-size: 75%;
+		font-style: italic;
+		font-family: Georgia, "Times New Roman", serif;
+		margin-left: 0;
+		background-color: #FFFFFF;
+		clear: left;
+		text-align: center;}
+
+label {	float: left;
+		display: block;
+		margin-left: 2em;
+		text-align: left;
+		width: 10em;
+		padding-right: 1em; }
+		
+input {	display:block-inline;
+		margin-bottom: 10px;
+		margin-left: .5em;}
+		
+select{	display:block-inline;
+		margin-bottom: 10px;
+		margin-left: .5em;}
+		
+img {	max-width: 100%;
+		width: auto;}
+		
+table {	color: #000000;
+		display: block;
+		padding: 10px 0px; }
+td	{	vertical-align: top;}
+tr:nth-of-type(even){ 
+		background-color: #FFCCFF;}
+th	{	text-align: left;}
+		
+nav  { 	width: auto;
+		font-weight: bold;
+		background-color: #FF00FF;}
+nav ul {	list-style-type: none;
+		text-align: center;
+		margin: 0;
+		padding-left: 0;
+		font-size: 1.2em;}
+nav li {	display: inline;
+		padding: 0 0.75em 0 0.75em;	}
+nav a {	text-decoration: none;
+		-webkit-transition: color 1s ease-out;
+		-moz-transition: color 1s ease-out;
+		-o-transition: color 1s ease-out;
+		transition: color 1s ease-out;}
+nav a:link {color: #FFFFFF;}
+nav a:visited {color: #3333FF;}
+nav a:hover {color: #00FFFF;}
+
+#wrapper{width: 80%;
+		min-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #FFFFFF;
+		box-shadow: 5px 5px 5px #000033;}
+
+#status table{color: #FFFFFF;
+		width: 80%;
+		min-width: 800px;}
+#status td {width: 5%;}
+		
+#content{padding: 1px 10px 20px 10px;
+		background-color: #FFFFFF;
+		min-height: 320px;}
+#content ul{list-style-position: inside;
+		list-style-image: url(images/marker.gif); }
+
+#mobile {display: none;}
+#desktop{display: inline;}
+
+#init  { display: block;
+		padding: 10px 5px 5px 10px;
+		float: left;
+		width: 145px;
+		font-weight: bold;
+		border: 1px solid #000000;
+		color: #000000;}
+#init ul {list-style-type: none;
+		margin: 0;
+		padding-left: 0;
+		font-size: 0.8em;}
+#init li {padding-bottom: 10px;}
+
+
+#effects  { display: block;
+		margin-left: 10px;
+		padding: 10px 5px 5px 10px;
+		float: left;
+		width: 70%;
+		font-weight: bold;
+		border: 1px solid #000000;
+		color: #000000;}
+.effect  {list-style-type: none;
+		margin: 0;
+		padding-left: 0;
+		font-size: 0.9em;}
+.effect {padding-bottom: 10px;}
+.effect :nth-of-type(odd){ 
+		background-color: #FFCCFF;}
+
+.error {color: #000000;
+		background-color: #FFFFFF;}
+
+
+@media only screen and (max-width: 768px) {
+	nav li{display: inline;
+		padding: 0 0.75em 0 0.75em; }
+	nav img {display: none;}
+	#wrapper{min-width: 0;
+		width: auto;}
+	#content{margin-left: 0;}
+	#status table{color: #FFFFFF;
+		width: 100%;
+		min-width: 0;}
+	#effects  { display: block;
+		width: 90%;
+		margin-left: 0px;
+		margin-top: 10px;
+		padding: none;
+		float: none;}
+	#init {float: none;}
+}
+
+@media only screen and (max-width: 480px) {
+	body{margin: 0;}
+	h1{	margin: 0;
+		font-size: 1.5em;
+		padding-left: 0.3em; }
+	nav ul{padding: 0;}
+	nav li{display: block;
+		margin: 0;
+		border-bottom: 2px solid #330000; }
+	nav a{display: block;}
+		
+	#wrapper{min-width: 0;
+		width: auto;
+		margin: 0;}
+	#content{ padding: 0.1em 1em 0.1em 1em;
+		margin-left: 0;
+		font-size: 90%;}
+	#content img{float: none;
+		padding: 0;
+		margin: 0.1em;}
+	#content ul{list-style-position: outside;}
+	#mobile {display: inline;}
+	#desktop{display: none;}
+	#gallery{display: none;}
+
+}
