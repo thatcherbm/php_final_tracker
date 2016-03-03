@@ -1,6 +1,6 @@
 <?php # index.php
 $page_title = 'Encounter Tracker';
-include ('includes/header.html');
+include ('header.php');
 ?>
 
 <h2>Tracking the Action</h2>
@@ -29,5 +29,5 @@ include ('includes/header.html');
 
 	
 <?php 
-include ('includes/footer.html');
+include ('footer.php');
 ?>

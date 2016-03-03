@@ -26,4 +26,4 @@ if (isset($errors) && !empty($errors)) {
 <h2>Not registered?</h2>
 <a href="register.php">REGISTER</a>
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>

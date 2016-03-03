@@ -2,7 +2,7 @@
 // This page allows users to change their password for the site.
 require ('includes/config.inc.php');
 $page_title = 'Change Password';
-include ('includes/header.html');
+include ('header.php');
 
 // If no session value is present, redirect the user:
 // Also validate the HTTP_USER_AGENT!
@@ -105,4 +105,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 
 </form>
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>

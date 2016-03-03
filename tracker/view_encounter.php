@@ -7,7 +7,7 @@ require ('includes/encounter_functions.inc.php');
 
 // header:
 $page_title = 'View Encounter';
-include ('includes/header.html');
+include ('header.php');
 
 
 // Get information for the encounter to be displayed
@@ -49,33 +49,35 @@ if ($oid == $uid) {
 echo "</h2>"; 
 echo "<p>Round: " . $round . "</p>\n";
 
+
+//retrieve all creatures in the encounter and list them in initiative order
+$q = "SELECT * FROM participants WHERE encounter_id='$enc_id' ORDER BY initiative";		
+$r = $mysqli->query ($q); // Run the query.
+echo '<div class="row" id="encounter_info">';
+echo '<div id="init_container" class="col-md-2 col-sm-3 col-xs-12">';
+echo '<div id="init">';
 // add links to progress through list
 if ($oid == $uid) {
-	echo '<p style="padding-left: 1em">';
+	//echo '<p>';
 	if ($round == 0) { //display start button
 		echo '<a href="includes/next.inc.php?e=' . $enc_id . '&i=' . $init . '&r=' . $round .'">start</a>';
-		$active_participant = 0;
 	} else if ($encounter['current_init'] > 0) {
 		echo '<a href="includes/prev.inc.php?e=' . $enc_id . '&i=' . $init . '&r=' . $round .'">prev</a>
 		<a href="includes/next.inc.php?e=' . $enc_id . '&i=' . $init . '&r=' . $round .'">next</a>';
 	}
-	echo '</p>';
+	//echo '</p>';
 }
-//retrieve all creatures in the encounter and list them in initiative order
-$q = "SELECT * FROM participants WHERE encounter_id='$enc_id' ORDER BY initiative";		
-$r = $mysqli->query ($q); // Run the query.
-
-echo '<div id="init"><ul>';
-	$active_participant = 0;
-	while ($row = $r->fetch_object()) {
-		echo '<li ';
-		// highlight the creature who's turn it is.
-		if ($encounter['current_init'] == $row->initiative) {
-			echo 'style="background-color: #99EEFF;"';
-			$active_participant = $row->participant_id;
-		}
-		echo '>' . $row->initiative . ' :: ' . $row->name . '</li>' . "\n";
+echo '<ul>';
+$active_participant = 0;
+while ($row = $r->fetch_object()) {
+	echo '<li ';
+	// highlight the creature who's turn it is.
+	if ($encounter['current_init'] == $row->initiative) {
+		echo 'style="background-color: #99EEFF;"';
+		$active_participant = $row->participant_id;
 	}
+	echo '>' . $row->initiative . ' :: ' . $row->name . '</li>' . "\n";
+}
 
 
 //retrieve all corpses in the encounter and list them
@@ -85,12 +87,13 @@ $r = $mysqli->query ($q); // Run the query.
 	while ($row = $r->fetch_object()) {
 		echo '<li style="color: #A9A9A9;">'. $row->name . '</li>' . "\n";
 	}
-	
+echo '</ul>';
 // Add edit link for the encounter owner
 if ($oid == $uid) {
-	echo ' <a style="font-size: 1em" href="edit_init_order.php?x=' . $enc_id . '"">add/edit</a>';
+	echo ' <a  href="edit_init_order.php?x=' . $enc_id . '">add/edit</a>';
 }
-echo '</ul></div>'; //init
+echo '</div>';
+echo '</div>'; //init
 
 
 //retrieve all active effects which target the active creature
@@ -108,7 +111,9 @@ $qp_effect = "SELECT name, description FROM effects WHERE effect_id = ?";
 $stmt_e = $mysqli->prepare($qp_effect);
 $stmt_e->bind_param('i', $eid);
 
-echo '<div id="effects"><h3>Effects Targeting:</h3><ul class="effect">';
+echo '<div id="effects_container" class="col-md-10 col-sm-9 col-xs-12">';
+echo '<div id="effects">';
+echo '<h3>Effects Targeting:</h3><ul class="effect">';
 while ($row = $r->fetch_object()) {
 	// get the creator's name
 	$pid = $row->participant_id;
@@ -124,7 +129,7 @@ while ($row = $r->fetch_object()) {
 	$stmt_e->fetch();
 	
 	// output data
-	// The logic is intended to hide effects from the players which are owned by the gm
+	// The logic prevents the players from seeing the details of effects which are owned by the gm
 	// logic statement evaluates as true for all effects of players and only gm effects if the gm is the encounter owner
 	// if ((the creature who created the effect is not owned by the encounter owner) or (the encounter owner is the user who is logged in))
 	
@@ -149,6 +154,8 @@ if ($oid == $uid) {
 	echo ' <a style="font-size: .9em" href="add_effect.php?x=' . $enc_id . '"">add/remove</a>';
 }
 echo '</div>'; //effects
+echo '</div>';
+echo '</div>'; //row
 
 // Close the connection:
 $mysqli->close();
@@ -163,4 +170,4 @@ unset($mysqli);
 
 ?>
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>

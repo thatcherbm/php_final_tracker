@@ -35,4 +35,9 @@ if ($new_init == 0 || $r == 0) { // increment round and get init of first creatu
 $q .= "current_init=$new_init WHERE encounter_id=$e";			
 $r = $mysqli->query ($q); // Run the query.
 
-if ($my
+if ($mysqli->affected_rows == 1) {
+	redirect_user('../view_encounter.php?e=' . $e );
+} else {
+	//echo $q;
+	//echo $r;
+}

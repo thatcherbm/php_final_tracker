@@ -7,7 +7,7 @@
 // Include the header:
 require ('includes/config.inc.php');
 $page_title = 'Profile';
-include ('includes/header.html');
+include ('header.php');
 
 // If no session value is present, redirect the user:
 // Also validate the HTTP_USER_AGENT!
@@ -135,4 +135,4 @@ unset($mysqli);
 
 ?>
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>

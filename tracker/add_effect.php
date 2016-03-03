@@ -7,7 +7,7 @@
 require ('includes/config.inc.php');
 require ('includes/login_functions.inc.php');
 $page_title = 'Edit Active Effects';
-include ('includes/header.html');
+include ('header.php');
 require (MYSQL); // Connect to the db.
 
 // Get information for the encounter ID
@@ -173,7 +173,7 @@ echo '</form>' . "\n\n";
 ?>
 
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>
 
 
 

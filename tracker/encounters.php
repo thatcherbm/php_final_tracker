@@ -3,7 +3,7 @@
 require ('includes/config.inc.php');
 
 $page_title = 'View Encounters';
-include ('includes/header.html');
+include ('header.php');
 
 // Page header:
 echo '<h1>Encounters</h1>';
@@ -47,5 +47,5 @@ if ($num > 0) { // If it ran OK, display the records.
 $mysqli->close();
 unset($mysqli);
 
-include ('includes/footer.html');
+include ('footer.php');
 ?>

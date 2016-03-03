@@ -9,7 +9,7 @@
 require ('includes/config.inc.php');
 require ('includes/login_functions.inc.php');
 $page_title = 'Edit';
-include ('includes/header.html');
+include ('header.php');
 require (MYSQL); // Connect to the db.
 
 // Get information for the entity type and id to be edited
@@ -58,4 +58,4 @@ echo '<form method="post" action="includes/edit.inc.php">
 	</form>';
 ?>
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>

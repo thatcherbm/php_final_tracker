@@ -2,7 +2,7 @@
 // This is the registration page for the site.
 require ('includes/config.inc.php');
 $page_title = 'Register';
-include ('includes/header.html');
+include ('header.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 
@@ -112,4 +112,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 
 </form>
 
-<?php include ('includes/footer.html'); ?>
+<?php include ('footer.php'); ?>

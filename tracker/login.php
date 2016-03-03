@@ -5,7 +5,7 @@ require ('includes/config.inc.php');
 
 // Include the header:
 $page_title = 'Login';
-include ('includes/header.html');
+include ('header.php');
 
 // Check if the form has been submitted:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -1,6 +1,6 @@
 <?php # index.php
 $page_title = 'Tabletop RPG Tools :: Dice Simulator';
-include ('includes/header.html');
+include ('header.php');
 ?>
 <h2>Rolling Dice</h2>
 <p>In a movie, everything which happens follows a carefully written script, if it is
@@ -59,5 +59,5 @@ Rolls:<span id="rolls" style="margin-left: 90px; color: #0000FF;"></span></p>
 
 	
 <?php 
-include ('includes/footer.html');
+include ('footer.php');
 ?>

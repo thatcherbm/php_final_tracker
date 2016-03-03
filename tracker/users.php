@@ -8,7 +8,7 @@
 require ('includes/config.inc.php');
 
 $page_title = 'View users';
-include ('includes/header.html');
+include ('header.php');
 
 // If no session value is present, redirect the user:
 // Also validate the HTTP_USER_AGENT!
@@ -58,5 +58,5 @@ for ($i = 0; $i < 4; $i++) {
 $mysqli->close();
 unset($mysqli);
 
-include ('includes/footer.html');
+include ('footer.php');
 ?>

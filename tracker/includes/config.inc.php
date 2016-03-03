@@ -12,7 +12,7 @@
 // ************ SETTINGS ************ //
 
 // Flag variable for site status:
-define('LIVE', TRUE);
+define('LIVE', FALSE);
 
 // Admin contact address:
 define('EMAIL', 'thatcherbm@gmail.com');
@@ -23,6 +23,7 @@ define ('BASE_URL', 'http://thatcherbm.com/tracker/');
 // Location of the MySQL connection script:
 define ('MYSQL', '../../mysqli_scripts/mysqli_connect_tracker.php');
 define ('MYSQL2', '../../../mysqli_scripts/mysqli_connect_tracker.php');
+define ('MYSQLCLASS', '../../../../mysqli_scripts/mysqli_connect_tracker.php');
 
 // Adjust the time zone for PHP 5.1 and greater:
 date_default_timezone_set ('US/Mountain');
